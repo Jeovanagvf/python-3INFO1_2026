@@ -5,6 +5,7 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
+from uploader.router import router as uploader_router
 from rest_framework.routers import DefaultRouter
 
 from core.views import AutorViewSet, CategoriaViewSet, EditoraViewSet, LivroViewSet, UserViewSet
@@ -19,6 +20,7 @@ router.register(r'autor', AutorViewSet, basename='autor')
 urlpatterns = [
     path('admin/', admin.site.urls),
     # OpenAPI 3
+    path('api/media/', include(uploader_router.urls)),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path(
         'api/swagger/',
