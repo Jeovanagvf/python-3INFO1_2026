@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_spectacular',
     'rest_framework',
-    'core',
     'uploader',
+    'core',
 ]
 
 MIDDLEWARE = [
